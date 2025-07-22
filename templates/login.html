@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<style>
+body {
+  background-image: url({{ url_for('static', filename='images/Credit-Card-Fraud-investigation.jpg') }})
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+</style>   
+</head>
+
+<body background="{{ url_for('static', filename='images/Credit-Card-Fraud-investigation.jpg') }}"> 
+ <div class="login" align="center">
+	<h1 style="color: rgb(187, 254, 5);font-size: 3rem;">Transaction Fraud Detection Using Data Mining</h1>
+  <h2 style="color: rgb(187, 254, 5);font-size: 30px;">Login with username and password</h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('logedin')}}"method="post">
+      <label style="color:rgb(229, 229, 238)">Enter User ID:</label>
+    	<input type="text" name="user_id " placeholder="user_id" required="required" /><br><br><br>
+      <label style="color:rgb(229, 229, 238)">Enter Password:</label>
+        <input type="password" name="password" placeholder="password" required="required" /><br><br><br>
+
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large" ">Login</button>
+       
+    </form>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+    <form action="{{ url_for('register')}}"method="post">
+      <h3 style="color: rgb(187, 254, 5);font-size: 30px;">New User? Click Below to register!!</h3>
+      <label style="color:rgb(229, 229, 238)">New User ID:</label>
+    	<input type="text" name="user_id " placeholder="user" required="required" /><br><br><br>
+      <label style="color:rgb(229, 229, 238)">New Password:</label>
+        <input type="password" name="password" placeholder="password" required="required" /><br><br><br>
+
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large" ">register</button>
+       
+    </form>
+
+   <br>
+   <br>
+  
+
+ </div>
+
+
+</body>
+</html>

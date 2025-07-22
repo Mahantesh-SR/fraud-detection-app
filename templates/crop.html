@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<style>
+body {
+  background-image: url({{ url_for('static', filename='templates/detecting.jpg') }})
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  #calltoaction-form {
+  background: #f2f2f2;
+  padding-bottom: 10px;
+  width: 800px;
+  position: right;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.form-section {
+  float: left;
+  width: 50%;
+}
+
+label {
+  display: block;
+  margin-bottom: .25em;
+}
+}
+</style> 
+</head>
+
+
+
+
+
+<body background="{{ url_for('static', filename='detecting.jpg') }}"> 
+ <div class="login" align="center">
+	<h1 style="color: rgb(187, 254, 5);font-size: 3rem;">Transaction Fraud Detection Using Data Mining</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict1')}}"method="post">
+      <div class="form-section">
+        <label style="color:rgb(255, 255, 255)">Transaction amount</label>
+    	<input type="text" name="experience" placeholder="Transaction amount" required="required" />
+      </div>
+      <div class="form-section">
+        <label style="color:rgb(241, 241, 247)">Transaction frequency</label>
+        <input type="text" name="test_score" placeholder="Transaction frequency" required="required" /><br><br><br>
+      </div>
+      <div class="form-section">
+        <label style="color:rgb(253, 253, 253)">Previous transaction history</label>
+		<input type="text" name="interview_score1" placeholder="Previous transaction history" required="required" />
+      </div>
+      <div class="form-section">
+        <label style="color:rgb(253, 253, 255)">Purchase amount compared to average</label>
+		<input type="text" name="interview_score2" placeholder="Purchase amount compared to average" required="required" /><br><br><br>
+      </div>
+      <div class="form-section">
+        <label style="color:rgb(251, 251, 253)">CVV</label>
+		<input type="text" name="interview_score3" placeholder="CVV" required="required" />
+      </div>
+      <div class="form-section">
+        <label style="color:rgb(254, 254, 255)">Billing address verification</label>
+		<input type="text" name="interview_score4" placeholder="Billing address verification" required="required" /><br><br><br>
+      </div>
+      <div class="form-section">
+        <label style="color:rgb(252, 252, 252)">Time since last transaction</label>
+		<input type="text" name="interview_score5" placeholder="Time since last transaction" required="required" />
+      </div>
+      <div class="form-section">
+        <label style="color:rgb(252, 252, 255)">Average transaction amount</label>
+    <input type="text" name="interview_score51" placeholder="Average transaction amount" required="required" /><br><br><br>
+      </div>
+      <div class="form-section">
+        <label style="color:rgb(249, 249, 251)">Failed attempts</label>
+    <input type="text" name="interview_score52" placeholder="Failed attempts" required="required" />
+      </div>
+      <div class="form-section">
+        <label style="color:rgb(253, 253, 254)">Transaction type</label>
+    <input type="text" name="interview_score53" placeholder="Transaction type" required="required" /><br><br><br>
+      </div>	
+        <button type="submit" class="btn btn-primary btn-block btn-large" style="width: 200px; height: 50px;background-color:red;">Verification</button>
+
+ 
+    </form>
+
+   <br>
+   <br>
+  <a style="color:rgb(195, 255, 0);font-size: 5rem;"> {{ prediction1_text }} </a>
+   <br>
+ 
+   
+
+ </div>
+
+
+</body>
+</html>

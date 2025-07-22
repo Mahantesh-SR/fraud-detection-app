@@ -1,0 +1,8 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+pymysql
+joblib
+xgboost=1.7.3
+flask
