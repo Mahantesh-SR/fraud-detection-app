@@ -49,6 +49,10 @@ app = Flask(__name__)
 def home():
     return render_template('login.html')
 
+@app.route('/register_page')
+def show_register():
+    return render_template('register.html')
+
 @app.route('/logedin',methods=['POST'])
 def logedin():
     

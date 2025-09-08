@@ -7,66 +7,60 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 
-
-
 <style>
-body {
-  body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
-.w3-bar-block .w3-bar-item {padding:20px}
-  background-image: url({{url_for('static', filename='templates/ana420.jpg') }})
-
-  background-repeat:no-repeat;
-  background-size:100% 150%;
+body,h1,h2,h3,h4,h5,h6 {
+  font-family: "Karma", sans-serif;
 }
-</style> 
 
+.w3-bar-block .w3-bar-item {
+  padding: 20px;
+}
+
+body {
+  background-image: url("{{ url_for('static', filename='ana420.jpg') }}");
+  background-repeat: no-repeat;
+  background-size: 100% 150%;
+}
+
+.text-yellow {
+  color: rgb(247, 251, 5);
+}
+</style>
 </head>
-<body background="{{ url_for('static', filename='ana420.jpg') }}"> 
+<body>
 
-
-
-  
 <!-- !PAGE CONTENT! -->
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-quarter">
-       <img src = "{{ url_for('static', filename="images/analyse/Screenshot (77).png")}}",alt="Salmon" style="width:100%">
-      
-      <h3 style="color:rgb(226, 255, 3)">Card Type VS Fraud </h3>
-      <p style="color:rgb(247, 251, 5)">Card type dosen't contribute as much as other attributes does. Since it hovers between fraudulent and legitimate.</p>
+      <img src="{{ url_for('static', filename='images/analyse/Screenshot (77).png') }}" alt="Card Type vs Fraud" style="width:100%">
+      <h3 class="text-yellow">Card Type VS Fraud</h3>
+      <p class="text-yellow">Card type doesn’t contribute as much as other attributes do, since it hovers between fraudulent and legitimate.</p>
     </div>
     <div class="w3-quarter">
-      <img src = "{{ url_for('static', filename="images/analyse/Screenshot (78).png")}}",alt="Salmon" style="width:100%">
-      <h3 style="color:rgb(247, 251, 5)">Frequency VS Fraud</h3>
-      <p style="color:rgb(247, 251, 5)">Whenever hacker performs fraud he gives multiple attempts. As the number of transaction increases, chances of transaction being fraudulent also increases.</p>
+      <img src="{{ url_for('static', filename='images/analyse/Screenshot (78).png') }}" alt="Frequency vs Fraud" style="width:100%">
+      <h3 class="text-yellow">Frequency VS Fraud</h3>
+      <p class="text-yellow">Whenever a hacker performs fraud, he gives multiple attempts. As the number of transactions increases, chances of fraud also increase.</p>
     </div>
     <div class="w3-quarter">
-      <img src = "{{ url_for('static', filename="images/analyse/Screenshot (79).png")}}",alt="Salmon" style="width:100%">
-      <h3 style="color:rgb(247, 251, 5)">Merchant VS Fraud</h3>
-      <p style="color:rgb(247, 251, 5)">Merchant type is almost independent, hackers can attack any person's account. Since it hovers between fraudulent and legitimate</p>
-      <p></p>
+      <img src="{{ url_for('static', filename='images/analyse/Screenshot (79).png') }}" alt="Merchant vs Fraud" style="width:100%">
+      <h3 class="text-yellow">Merchant VS Fraud</h3>
+      <p class="text-yellow">Merchant type is almost independent; hackers can attack any account. Since it hovers between fraudulent and legitimate.</p>
     </div>
     <div class="w3-quarter">
-      <img src = "{{ url_for('static', filename="images/analyse/Screenshot (80).png")}}",alt="Salmon" style="width:100%">
-      <h3 style="color:rgb(247, 251, 5)">Amount VS Fraud</h3>
-      <p style="color:rgb(247, 251, 5)">Whenever the transaction amount is more than normal transaction, possibility of transaction being fraudulent will be more.</p>
+      <img src="{{ url_for('static', filename='images/analyse/Screenshot (80).png') }}" alt="Amount vs Fraud" style="width:100%">
+      <h3 class="text-yellow">Amount VS Fraud</h3>
+      <p class="text-yellow">Whenever the transaction amount is higher than normal, the possibility of fraud increases.</p>
     </div>
   </div>
- 
-  
-  
-
-<!-- End page content -->
 </div>
 
 <script>
-// Script to open and close sidebar
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
 }
- 
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
