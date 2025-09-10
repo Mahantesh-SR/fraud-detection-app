@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <style>
+    body {
+      background-image: url({{ url_for('static', filename='images/Credit-Card-Fraud-investigation.jpg') }});
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .result-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 25px;
+      border-radius: 12px;
+      width: 400px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .safe {
+      color: #28a745; /* Green */
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .fraud {
+      color: #dc3545; /* Red */
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .score {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #ffc107; /* Yellow */
+    }
+
+    a {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-box">
+    <h1>Fraud Detection Result</h1>
+
+    <!-- Correct class assignment using exact match -->
+    {% if 'Fraudulent' in prediction1_text %}
+      <p class="fraud">{{ prediction1_text }}</p>
+    {% else %}
+      <p class="safe">{{ prediction1_text }}</p>
+    {% endif %}
+
+    <p class="score">{{ score_text }}</p>
+
+    <a href="{{ url_for('crop') }}">🔙 Try Another Transaction</a>
+  </div>
+</body>
+</html>
